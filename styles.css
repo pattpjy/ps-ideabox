@@ -98,7 +98,6 @@ form {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    
 }
 
 .title-inputs {
@@ -147,8 +146,12 @@ form {
     background-image:url("Assets/search.svg");
     background-repeat: no-repeat;
     background-color: #353567;
-    height: 20px;
-    width: 20px;
+    height: 3vh;
+    width:30px;
+    display:flex;
+    /* justify-content: center;
+    align-items: center; */
+
 }
 
 .search-bar {
@@ -156,14 +159,20 @@ form {
     flex-direction: row;
     align-content:stretch;
     justify-content:left;
-     
+    align-items: stretch;
 }
+    /* flex-grow: 2; */
+
 
 #user-idea-box {
     border: 2px solid #5356A4;
-
 }
 
 #minibox-top {
     background-color: #1F1F3D;
+}
+
+#search-input{
+    display: flex;
+    width:100%;
 }
