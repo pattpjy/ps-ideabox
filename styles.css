@@ -176,3 +176,13 @@ form {
     display: flex;
     width:100%;
 }
+/* #x-button {
+    background-image: url();
+} */
+
+#comment-button {
+    background-image: url("Assets/comment.svg") ;
+    background-repeat: no-repeat;
+    border: solid 2px red;
+    display: flex;
+}
