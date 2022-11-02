@@ -114,8 +114,6 @@ form {
     height: 80px;
 }
 
-
-
 .bottom-section {
     display: flex;
     height: 60%;
@@ -144,3 +142,28 @@ form {
     flex-direction: column;
     font-size: small;
  }
+
+#search-button {
+    background-image:url("Assets/search.svg");
+    background-repeat: no-repeat;
+    background-color: #353567;
+    height: 20px;
+    width: 20px;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-content:stretch;
+    justify-content:left;
+     
+}
+
+#user-idea-box {
+    border: 2px solid #5356A4;
+
+}
+
+#minibox-top {
+    background-color: #1F1F3D;
+}
