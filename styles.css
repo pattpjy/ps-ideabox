@@ -1,11 +1,10 @@
 
 * {
-    font-family: "open sans";
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
     display: flex;
-    border: solid red;
     margin: 0;
     padding: 0;
     /* border: 0; */
@@ -13,9 +12,9 @@ body {
 
 }
 
-.buttons {
-
-}
+/* .buttons {
+    
+} */
 
 .left-section {
     display: flex;
@@ -63,23 +62,34 @@ h3{
     height: 50px;
     width: 280px;
     font-size: x-large;
-    
+
 }
 
 .right-section {
     display: flex;
     width: 100%;
-    border: solid blue;
     flex-wrap: wrap;
-    flex-direction: column
-
 }
 
 .top-section {
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40%;
     width: 100%;
     background-color: #A9AAD2;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 40%;
+}
+.form-inputs {
+    margin:10px;
+    padding: 10px;
 }
 
 .bottom-section {
