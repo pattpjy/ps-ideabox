@@ -118,6 +118,7 @@ form {
     height: 60%;
     width: 100%;
     background-color: #EAEAF4;
+    padding: 10px
 }
 
 #save-button {
@@ -149,8 +150,6 @@ form {
     height: 3vh;
     width:30px;
     display:flex;
-    /* justify-content: center;
-    align-items: center; */
 
 }
 
@@ -161,11 +160,20 @@ form {
     justify-content:left;
     align-items: stretch;
 }
-    /* flex-grow: 2; */
 
 
+
+
+
+/*This section is for idea box*/
 #user-idea-box {
     border: 2px solid #5356A4;
+    height: 200px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    border:#1F1F3D solid 2px;
+    justify-content: space-between;
 }
 
 #minibox-top {
@@ -176,13 +184,54 @@ form {
     display: flex;
     width:100%;
 }
-/* #x-button {
-    background-image: url();
-} */
-
-#comment-button {
-    background-image: url("Assets/comment.svg") ;
+#x-button {
+    background-image: url("Assets/delete.svg");
     background-repeat: no-repeat;
-    border: solid 2px red;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: Transparent;
+}   
+
+#star-button {
+    background-image: url("Assets/star-active.svg");
+    background-repeat: no-repeat;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: Transparent;
+}   
+#minibox-top {
+    display:flex;
+    justify-content: space-between;
+}
+#minibox-inner {
     display: flex;
+    flex-direction: column;
+    padding:8px;
+}
+#minibox-inner>h2 {
+    font-size: small;
+    margin:0%
+}
+
+#minibox-inner>p{
+    font-size: small;
+    font-weight: light;
+    margin-top: 10px;
+    height: 100px;
+    text-overflow: ellipsis;
+    /* these will cut off the text that too long for the box */
+}
+#comment-button {
+    color: #E9E9F3;
+    background-image: url("Assets/comment.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-color: #5356A4;
+    text-align: left;
+    padding-left: 18px;
+    padding-right: 65px;
+    width: 100%;
+    border-style: none;
 }
