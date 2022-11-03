@@ -118,7 +118,13 @@ form {
     height: 60%;
     width: 100%;
     background-color: #EAEAF4;
-    padding: 10px
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 225px);
+    grid-gap: 1rem;
+    justify-items: center;
+    align-items: center;
 }
 
 #save-button {
@@ -147,9 +153,14 @@ form {
     background-image:url("Assets/search.svg");
     background-repeat: no-repeat;
     background-color: #353567;
-    height: 3vh;
-    width:30px;
+    background-position: center;
+    background-size: 20px;
+    height: 40px;
+    width:50px;
     display:flex;
+    border-style: none;
+    
+    
 
 }
 
@@ -159,6 +170,13 @@ form {
     align-content:stretch;
     justify-content:left;
     align-items: stretch;
+    height: 40px;
+    border: 1px solid #5356A4;
+    border-radius: 3px;
+}
+
+.search-input::placeholder {
+    color: #A9AAD2
 }
 
 
@@ -209,6 +227,7 @@ form {
     display: flex;
     flex-direction: column;
     padding:8px;
+    background-color: #FFFFFF;
 }
 #minibox-inner>h2 {
     font-size: small;
