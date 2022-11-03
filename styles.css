@@ -43,16 +43,17 @@ h3 {
     margin: 20px;
     font-weight: bold;
     font-size: small;
+    cursor: pointer;
 }
 
-#nav-inner-box {
+#navInnerBox {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%
 }
 
-#show-starred-ideas-button {
+#showStarredIdeasButton {
     /* display: flex;
     justify-content: space-around;
     align-items: center; */
@@ -65,7 +66,7 @@ h3 {
     width: 80%;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
-
+    cursor: pointer;
 }
 
 .right-section {
@@ -104,13 +105,14 @@ form {
     border: 2px solid #5356A4;
     border-radius: 3px;
     height: 35px;
-
+    cursor: pointer;
 }
 
 .body-inputs {
     border: 2px solid #5356A4;
     border-radius: 3px;
     height: 80px;
+    cursor: pointer;
 }
 
 .bottom-section {
@@ -127,7 +129,7 @@ form {
     align-items: center;
 }
 
-#save-button {
+#saveButton {
    color: #E9E9F3;
    background-color: #353567;
    border: 2px solid #5356A4;
@@ -135,21 +137,25 @@ form {
    font-weight: bold;
    padding: 8px;
    font-size: medium;
+   cursor: pointer;
+   margin-bottom: 20px;
 }
 
  .title-box {
     display: flex;
     flex-direction: column;
     font-size: small;
+    padding-bottom: 20px;
  }
 
  .body-box {
     display: flex;
     flex-direction: column;
     font-size: small;
+    padding-bottom: 20px;
  }
 
-#search-button {
+#searchButton {
     background-image:url("Assets/search.svg");
     background-repeat: no-repeat;
     background-color: #353567;
@@ -159,9 +165,7 @@ form {
     width:50px;
     display:flex;
     border-style: none;
-    
-    
-
+    cursor: pointer;
 }
 
 .search-bar {
@@ -176,15 +180,17 @@ form {
 }
 
 .search-input::placeholder {
-    color: #A9AAD2
+    color: #A9AAD2;
 }
 
-
-
-
+#searchInput {
+    display: flex;
+    width:100%;
+    cursor: pointer;
+}
 
 /*This section is for idea box*/
-#user-idea-box {
+#userIdeaBox {
     border: 2px solid #5356A4;
     height: 200px;
     width: 180px;
@@ -194,47 +200,45 @@ form {
     justify-content: space-between;
 }
 
-#minibox-top {
+#miniboxTop {
     background-color: #1F1F3D;
 }
 
-#search-input{
-    display: flex;
-    width:100%;
-}
-#x-button {
+#xButton {
     background-image: url("Assets/delete.svg");
     background-repeat: no-repeat;
     border: none;
     width: 20px;
     height: 20px;
     background-color: Transparent;
+    cursor: pointer;
 }   
 
-#star-button {
+#starButton {
     background-image: url("Assets/star-active.svg");
     background-repeat: no-repeat;
     border: none;
     width: 20px;
     height: 20px;
     background-color: Transparent;
+    cursor: pointer;
 }   
-#minibox-top {
+#miniboxTop {
     display:flex;
     justify-content: space-between;
 }
-#minibox-inner {
+#miniboxInner {
     display: flex;
     flex-direction: column;
     padding:8px;
     background-color: #FFFFFF;
 }
-#minibox-inner>h2 {
+#miniboxInner>h2 {
     font-size: small;
     margin:0%
 }
 
-#minibox-inner>p{
+#miniboxInner>p{
     font-size: small;
     font-weight: light;
     margin-top: 10px;
@@ -242,7 +246,7 @@ form {
     text-overflow: ellipsis;
     /* these will cut off the text that too long for the box */
 }
-#comment-button {
+#commentButton {
     color: #E9E9F3;
     background-image: url("Assets/comment.svg");
     background-size: 20px;
