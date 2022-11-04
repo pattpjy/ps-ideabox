@@ -117,17 +117,18 @@ form {
 
 .bottom-section {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     height: 60%;
     width: 100%;
     background-color: #EAEAF4;
     padding: 10px;
-    display: grid;
+    margin: 20px;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 225px); 
-    grid-gap: 1rem;
-    justify-items: center;
-    align-items: center;
+    grid-gap: 1rem; */
+    /* justify-items: center;
+    align-items: center; */
 }
 
 #saveButton {
@@ -192,15 +193,6 @@ form {
 }
 
 /*This section is for idea box*/
-#userIdeaBox {
-    border: 2px solid #5356A4;
-    height: 200px;
-    width: 180px;
-    display: flex;
-    flex-direction: column;
-    border:#1F1F3D solid 2px;
-    justify-content: space-between;
-}
 
 #miniboxTop {
     background-color: #1F1F3D;

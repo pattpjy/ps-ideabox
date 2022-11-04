@@ -54,23 +54,23 @@ function hideSaveButton() {
 
 function makeUserIdeaCard() {
     saveIdeas()
-    cardBox.classList.remove('hidden');
     console.log('help')
     cardBox.innerHTML = "";
     for (var i = 0; i < ideas.length; i++) {
         cardBox.innerHTML += 
-    `<div class="userIdeaBox" id="userIdeaBox">
-                <div id="miniboxTop">
-                    <button class="button" id="starButton"></button>
-                    <button class="button" id="xButton"></button>
-                </div>
-                <div id="miniboxInner">
-                    <h2 class="idea-title" id="ideaTitle">${ideas[i].title}</h2>
-                    <p class="idea-body" id="ideaBody">${ideas[i].body}</p>
-                </div>
-                <div id="miniboxFooter">
-                    <button class="button" id="commentButton">Comment</button>
-                </div>
-            </div>`
+    `<div class="user-idea-box" id="userIdeaBox">
+        <div class="user-idea-box" id="miniboxTop">
+            <button class="button" id="starButton"></button>
+            <button class="button" id="xButton"></button>
+        </div>
+        <div class="user-idea-box" id="miniboxInner">
+            <h2 class="idea-title" id="ideaTitle">${ideas[i].title}</h2>
+            <p class="idea-body" id="ideaBody">${ideas[i].body}</p>
+        </div>
+        <div class="user-idea-box" id="miniboxFooter">
+            <button class="button" id="commentButton">Comment</button>
+        </div>
+     </div>`
+    cardBox.classList.remove('hidden');
     }
 }
