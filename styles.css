@@ -117,13 +117,14 @@ form {
 
 .bottom-section {
     display: flex;
+    flex-direction: column;
     height: 60%;
     width: 100%;
     background-color: #EAEAF4;
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 225px);
+    grid-template-rows: repeat(2, 225px); 
     grid-gap: 1rem;
     justify-items: center;
     align-items: center;
