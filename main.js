@@ -12,7 +12,6 @@ newTitle.addEventListener("input", showSaveButton)
 newBody.addEventListener("input", showSaveButton)
 saveIdeaButton.addEventListener("click", function(event) {
     event.preventDefault()
-    saveIdeas() //save to array data model
     showSaveButton()
     hideSaveButton() // why is this affecting the function hide and save?
     //another function to display to DOM like function displayUserIdeaCard
@@ -47,12 +46,14 @@ function showSaveButton() {
 function hideSaveButton() {
     if(newTitle.value === "" || newBody.value === ""){
     saveIdeaButton.style.opacity = "0.1"
+    saveIdeaButton.removeEventListener('click')
     }
     //function is not fully working when you fill out value for either body or title then delete one the button does not hide but it should. 
 }
 
 
 function makeUserIdeaCard() {
+    saveIdeas()
     cardBox.classList.remove('hidden');
     console.log('help')
     cardBox.innerHTML = "";
