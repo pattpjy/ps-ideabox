@@ -137,8 +137,9 @@ form {
    font-weight: bold;
    padding: 8px;
    font-size: medium;
-   cursor: pointer;
+   cursor: default;
    margin-bottom: 20px;
+   opacity: 0.1;
 }
 
  .title-box {
