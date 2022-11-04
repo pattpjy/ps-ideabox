@@ -258,3 +258,7 @@ form {
     width: 100%;
     border-style: none;
 }
+
+.hidden {
+    display: none!important;
+}
