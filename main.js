@@ -4,12 +4,21 @@ var newBody = document.querySelector("#bodyInput")
 var saveIdeaButton = document.querySelector("#saveButton")
 var showStarredIdeasButton = document.querySelector("#showStarredIdeasButton")
 var cardBox = document.querySelector(".user-idea-box")
+var cardBoxDelete = document.querySelector(".xButton")
 
 
 
 //eventListeners
-newTitle.addEventListener("input", showSaveButton)
-newBody.addEventListener("input", showSaveButton)
+newTitle.addEventListener("input", function(){
+    hideSaveButton()
+    showSaveButton()
+    })
+    
+newBody.addEventListener("input",function(){
+    hideSaveButton()
+    showSaveButton()
+    }) 
+
 saveIdeaButton.addEventListener("click", function(event) {
     event.preventDefault()
     showSaveButton()
@@ -18,13 +27,13 @@ saveIdeaButton.addEventListener("click", function(event) {
     makeUserIdeaCard()
 })
 // *cardBoxSave.addEventListener("click", somefunctionSave) //might need to change name for star button
-// *cardBoxDelete.addEventListener("click", somefunctionDelete) //might need to change name for X button
+cardBoxDelete.addEventListener("click", deleteUserCard) 
+
 // // showStarredIdeasButton.addEventListener("click", somefunction)
 var ideas = []
 // // userIdeaBox.classList.toggle('hidden') this will un-hidden
 
 function saveIdeas(){
-    console.log("hello")
     var newIdea = new Idea(newTitle.value, newBody.value)
     ideas.push(newIdea)
     resetForm()
@@ -39,14 +48,13 @@ function resetForm(){
 function showSaveButton() {
     if(newTitle.value != "" && newBody.value != ""){
     saveIdeaButton.style.opacity = "1"
-    saveIdeaButton.style.cursor = "pointer"
+    saveIdeaButton.style.cursor = "pointer" 
     }
 }
 
 function hideSaveButton() {
     if(newTitle.value === "" || newBody.value === ""){
     saveIdeaButton.style.opacity = "0.1"
-    saveIdeaButton.removeEventListener('click')
     }
     //function is not fully working when you fill out value for either body or title then delete one the button does not hide but it should. 
 }
@@ -72,5 +80,16 @@ function makeUserIdeaCard() {
                     <button class="button" id="commentButton">Comment</button>
                 </div>
             </div>`
+    }
+}
+
+function deleteUserCard(){
+    if(event.target.classList.contains("xButton")){
+        for(var i = 0; i< ideas.length; i++){
+            if(event.target.classList.closest("user-idea-box").id == ideas[i].id){
+                ideas.splice(i,1)
+            }
+        }
+        event.target.closest("user-idea-box").remove()
     }
 }
