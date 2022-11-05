@@ -3,7 +3,7 @@ var newTitle = document.querySelector("#titleInput")
 var newBody = document.querySelector("#bodyInput")
 var saveIdeaButton = document.querySelector("#saveButton")
 var showStarredIdeasButton = document.querySelector("#showStarredIdeasButton")
-var cardBox = document.querySelector(".user-idea-box")
+var cardBox = document.querySelector(".bottom-section")
 var cardBoxDelete = document.querySelector(".bottom-section")
 
 
@@ -58,7 +58,6 @@ function hideSaveButton() {
 //this two fuctions above can be combine into one function just make an if /else{}
 
 function makeUserIdeaCard() {
-    cardBox.classList.remove('hidden');
     console.log('im the make user thing')
     cardBox.innerHTML = "";
     for (var i = 0; i < ideas.length; i++) {
@@ -72,7 +71,7 @@ function makeUserIdeaCard() {
                     <h2 class="idea-title" id="ideaTitle">${ideas[i].title}</h2>
                     <p class="idea-body" id="ideaBody">${ideas[i].body}</p>
                 </div>
-                <div class="user-idea-box" id="miniboxFooter">
+                <div id="miniboxFooter">
                 </div>
             </div>`
     }
