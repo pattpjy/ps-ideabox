@@ -192,13 +192,13 @@ form {
 }
 
 /*This section is for idea box*/
-#userIdeaBox {
-    border: 2px solid #5356A4;
+#userIdeaBox { 
+    /* border: 2px solid #5356A4; */
     height: 200px;
     width: 180px;
     display: flex;
     flex-direction: column;
-    border:#1F1F3D solid 2px;
+    /* border:#1F1F3D solid 2px; use this name --> .user-idea-box*/
     justify-content: space-between;
 }
 

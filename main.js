@@ -4,7 +4,7 @@ var newBody = document.querySelector("#bodyInput")
 var saveIdeaButton = document.querySelector("#saveButton")
 var showStarredIdeasButton = document.querySelector("#showStarredIdeasButton")
 var cardBox = document.querySelector(".user-idea-box")
-var cardBoxDelete = document.querySelector(".xButton")
+var cardBoxDelete = document.querySelector(".bottom-section")
 
 
 
@@ -21,9 +21,7 @@ newBody.addEventListener("input",function(){
 
 saveIdeaButton.addEventListener("click", function(event) {
     event.preventDefault()
-    showSaveButton()
-    hideSaveButton() // why is this affecting the function hide and save?
-    //another function to display to DOM like function displayUserIdeaCard
+    saveIdeas()
     makeUserIdeaCard()
 })
 // *cardBoxSave.addEventListener("click", somefunctionSave) //might need to change name for star button
@@ -56,40 +54,37 @@ function hideSaveButton() {
     if(newTitle.value === "" || newBody.value === ""){
     saveIdeaButton.style.opacity = "0.1"
     }
-    //function is not fully working when you fill out value for either body or title then delete one the button does not hide but it should. 
 }
-
+//this two fuctions above can be combine into one function just make an if /else{}
 
 function makeUserIdeaCard() {
-    saveIdeas()
     cardBox.classList.remove('hidden');
-    console.log('help')
+    console.log('im the make user thing')
     cardBox.innerHTML = "";
     for (var i = 0; i < ideas.length; i++) {
         cardBox.innerHTML += 
-    `<div class="userIdeaBox" id="userIdeaBox">
+    `<div class="user-idea-box" id="${ideas[i].id}">
                 <div id="miniboxTop">
-                    <button class="button" id="starButton"></button>
-                    <button class="button" id="xButton"></button>
+                    <button class="star-button" id="starButton"></button>
+                    <button class="x-button" id="xButton"></button>
                 </div>
                 <div id="miniboxInner">
                     <h2 class="idea-title" id="ideaTitle">${ideas[i].title}</h2>
                     <p class="idea-body" id="ideaBody">${ideas[i].body}</p>
                 </div>
-                <div id="miniboxFooter">
-                    <button class="button" id="commentButton">Comment</button>
+                <div class="user-idea-box" id="miniboxFooter">
                 </div>
             </div>`
     }
 }
 
 function deleteUserCard(){
-    if(event.target.classList.contains("xButton")){
-        for(var i = 0; i< ideas.length; i++){
-            if(event.target.classList.closest("user-idea-box").id == ideas[i].id){
-                ideas.splice(i,1)
-            }
+    for(var i = 0; i< ideas.length; i++){
+        if(event.target.closest(".user-idea-box").id == ideas[i].id){
+        ideas.splice(i,1)
+        event.target.closest(".user-idea-box").remove()
         }
-        event.target.closest("user-idea-box").remove()
     }
 }
+
+
