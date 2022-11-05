@@ -6,8 +6,6 @@ class Idea {
         this.star = false
     }
     updateIdea(){
-        // save 
-        // delete
         if(!this.star){
             this.star = true
         }else{
