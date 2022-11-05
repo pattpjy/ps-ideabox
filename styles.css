@@ -117,17 +117,13 @@ form {
 
 .bottom-section {
     display: flex;
-    flex-direction: column;
     height: 60%;
     width: 100%;
     background-color: #EAEAF4;
     padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 225px); 
-    grid-gap: 1rem;
-    justify-items: center;
-    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 #saveButton {
@@ -192,14 +188,10 @@ form {
 }
 
 /*This section is for idea box*/
-#userIdeaBox { 
-    /* border: 2px solid #5356A4; */
+
+.user-idea-box {
+    width: 30%;
     height: 200px;
-    width: 180px;
-    display: flex;
-    flex-direction: column;
-    /* border:#1F1F3D solid 2px; use this name --> .user-idea-box*/
-    justify-content: space-between;
 }
 
 #miniboxTop {
@@ -237,6 +229,7 @@ form {
     flex-direction: column;
     padding:8px;
     background-color: #FFFFFF;
+    border: 2px solid #5356A4;;
 }
 #miniboxInner>h2 {
     font-size: small;
@@ -248,8 +241,7 @@ form {
     font-weight: light;
     margin-top: 10px;
     height: 100px;
-    text-overflow: ellipsis;
-    /* these will cut off the text that too long for the box */
+    overflow-wrap: break-word;
 }
 #commentButton {
     color: #E9E9F3;
