@@ -25,7 +25,11 @@ saveIdeaButton.addEventListener("click", function(event) {
     makeUserIdeaCard()
 })
 // *cardBoxSave.addEventListener("click", somefunctionSave) //might need to change name for star button
-cardBoxDelete.addEventListener("click", deleteUserCard) 
+cardBoxDelete.addEventListener("click", function(event){
+    deleteUserCard(event)
+    switchStar(event)
+}) 
+
 
 // // showStarredIdeasButton.addEventListener("click", somefunction)
 var ideas = []
@@ -64,7 +68,7 @@ function makeUserIdeaCard() {
         cardBox.innerHTML += 
     `<div class="user-idea-box" id="${ideas[i].id}">
                 <div id="miniboxTop">
-                    <button class="star-button" id="starButton"></button>
+                    <button class="star-button" id="starButtonInactive"></button>
                     <button class="x-button" id="xButton"></button>
                 </div>
                 <div id="miniboxInner">
@@ -77,13 +81,37 @@ function makeUserIdeaCard() {
     }
 }
 
-function deleteUserCard(){
-    for(var i = 0; i< ideas.length; i++){
-        if(event.target.closest(".user-idea-box").id == ideas[i].id){
-        ideas.splice(i,1)
-        event.target.closest(".user-idea-box").remove()
+function deleteUserCard(event){
+    if(event.target.id === "xButton"){
+        for(var i = 0; i< ideas.length; i++){
+            //This equal need to be strickly equal, the left side is a string and right side is a integer. when we use double equal, it coerce the two to match. Which we do not want. 
+            if(event.target.closest(".user-idea-box").id === ideas[i].id.toString()){
+                ideas.splice(i,1)
+                event.target.closest(".user-idea-box").remove()
+            }
+        }
+    }
+        
+}
+
+//when hit the button change from outline star to filled
+
+function switchStar(event){
+    if(event.target.id === "starButtonInactive" || event.target.id === "starButtonActive"){
+        for(var i = 0; i< ideas.length; i++){
+            if(event.target.closest(".user-idea-box").id === ideas[i].id.toString()){
+                if(event.target.id === "starButtonInactive"){
+                    event.target.id = "starButtonActive"
+                    ideas[i].star = true
+                } else {
+                    event.target.id = "starButtonInactive"
+                    ideas[i].star = false
+                }
+            }
         }
     }
 }
 
+
+// update object star key to true
 

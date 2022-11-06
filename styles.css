@@ -208,14 +208,17 @@ form {
     cursor: pointer;
 }   
 
-#starButton {
-    background-image: url("Assets/star-active.svg");
+#starButtonInactive, #starButtonActive {
+    background-image: url("Assets/star.svg");
     background-repeat: no-repeat;
     border: none;
     width: 20px;
     height: 20px;
     background-color: Transparent;
     cursor: pointer;
+}   
+#starButtonActive {
+    background-image: url("Assets/star-active.svg");
 }   
 #miniboxTop {
     display:flex;
