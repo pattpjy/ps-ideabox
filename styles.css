@@ -117,18 +117,13 @@ form {
 
 .bottom-section {
     display: flex;
-    flex-wrap: wrap;
     height: 60%;
     width: 100%;
     background-color: #EAEAF4;
     padding: 10px;
-    margin: 20px;
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 225px); 
-    grid-gap: 1rem; */
-    /* justify-items: center;
-    align-items: center; */
+    gap: 10px;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 #saveButton {
@@ -193,6 +188,14 @@ form {
 }
 
 /*This section is for idea box*/
+<<<<<<< HEAD
+=======
+
+.user-idea-box {
+    width: 30%;
+    height: 200px;
+}
+>>>>>>> 201bfe0e46896c45f801d41cb07c3d31d384076c
 
 #miniboxTop {
     background-color: #1F1F3D;
@@ -208,14 +211,17 @@ form {
     cursor: pointer;
 }   
 
-#starButton {
-    background-image: url("Assets/star-active.svg");
+#starButtonInactive, #starButtonActive {
+    background-image: url("Assets/star.svg");
     background-repeat: no-repeat;
     border: none;
     width: 20px;
     height: 20px;
     background-color: Transparent;
     cursor: pointer;
+}   
+#starButtonActive {
+    background-image: url("Assets/star-active.svg");
 }   
 #miniboxTop {
     display:flex;
@@ -226,6 +232,7 @@ form {
     flex-direction: column;
     padding:8px;
     background-color: #FFFFFF;
+    border: 2px solid #5356A4;;
 }
 #miniboxInner>h2 {
     font-size: small;
@@ -237,8 +244,7 @@ form {
     font-weight: light;
     margin-top: 10px;
     height: 100px;
-    text-overflow: ellipsis;
-    /* these will cut off the text that too long for the box */
+    overflow-wrap: break-word;
 }
 #commentButton {
     color: #E9E9F3;

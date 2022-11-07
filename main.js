@@ -3,28 +3,39 @@ var newTitle = document.querySelector("#titleInput")
 var newBody = document.querySelector("#bodyInput")
 var saveIdeaButton = document.querySelector("#saveButton")
 var showStarredIdeasButton = document.querySelector("#showStarredIdeasButton")
-var cardBox = document.querySelector(".user-idea-box")
+var cardBox = document.querySelector(".bottom-section")
+var cardBoxDelete = document.querySelector(".bottom-section")
 
 
 
 //eventListeners
-newTitle.addEventListener("input", showSaveButton)
-newBody.addEventListener("input", showSaveButton)
+newTitle.addEventListener("input", function(){
+    hideSaveButton()
+    showSaveButton()
+    })
+    
+newBody.addEventListener("input",function(){
+    hideSaveButton()
+    showSaveButton()
+    }) 
+
 saveIdeaButton.addEventListener("click", function(event) {
     event.preventDefault()
-    showSaveButton()
-    hideSaveButton() // why is this affecting the function hide and save?
-    //another function to display to DOM like function displayUserIdeaCard
+    saveIdeas()
     makeUserIdeaCard()
 })
 // *cardBoxSave.addEventListener("click", somefunctionSave) //might need to change name for star button
-// *cardBoxDelete.addEventListener("click", somefunctionDelete) //might need to change name for X button
+cardBoxDelete.addEventListener("click", function(event){
+    deleteUserCard(event)
+    switchStar(event)
+}) 
+
+
 // // showStarredIdeasButton.addEventListener("click", somefunction)
 var ideas = []
 // // userIdeaBox.classList.toggle('hidden') this will un-hidden
 
 function saveIdeas(){
-    console.log("hello")
     var newIdea = new Idea(newTitle.value, newBody.value)
     ideas.push(newIdea)
     resetForm()
@@ -39,38 +50,68 @@ function resetForm(){
 function showSaveButton() {
     if(newTitle.value != "" && newBody.value != ""){
     saveIdeaButton.style.opacity = "1"
-    saveIdeaButton.style.cursor = "pointer"
+    saveIdeaButton.style.cursor = "pointer" 
     }
 }
 
 function hideSaveButton() {
     if(newTitle.value === "" || newBody.value === ""){
     saveIdeaButton.style.opacity = "0.1"
-    saveIdeaButton.removeEventListener('click')
     }
-    //function is not fully working when you fill out value for either body or title then delete one the button does not hide but it should. 
 }
-
+//this two fuctions above can be combine into one function just make an if /else{}
 
 function makeUserIdeaCard() {
-    saveIdeas()
-    console.log('help')
+    console.log('im the make user thing')
     cardBox.innerHTML = "";
     for (var i = 0; i < ideas.length; i++) {
         cardBox.innerHTML += 
-    `<div class="user-idea-box" id="userIdeaBox">
-        <div class="user-idea-box" id="miniboxTop">
-            <button class="button" id="starButton"></button>
-            <button class="button" id="xButton"></button>
-        </div>
-        <div class="user-idea-box" id="miniboxInner">
-            <h2 class="idea-title" id="ideaTitle">${ideas[i].title}</h2>
-            <p class="idea-body" id="ideaBody">${ideas[i].body}</p>
-        </div>
-        <div class="user-idea-box" id="miniboxFooter">
-            <button class="button" id="commentButton">Comment</button>
-        </div>
-     </div>`
-    cardBox.classList.remove('hidden');
+    `<div class="user-idea-box" id="${ideas[i].id}">
+                <div id="miniboxTop">
+                    <button class="star-button" id="starButtonInactive"></button>
+                    <button class="x-button" id="xButton"></button>
+                </div>
+                <div id="miniboxInner">
+                    <h2 class="idea-title" id="ideaTitle">${ideas[i].title}</h2>
+                    <p class="idea-body" id="ideaBody">${ideas[i].body}</p>
+                </div>
+                <div id="miniboxFooter">
+                </div>
+            </div>`
     }
 }
+
+function deleteUserCard(event){
+    if(event.target.id === "xButton"){
+        for(var i = 0; i< ideas.length; i++){
+            //This equal need to be strickly equal, the left side is a string and right side is a integer. when we use double equal, it coerce the two to match. Which we do not want. 
+            if(event.target.closest(".user-idea-box").id === ideas[i].id.toString()){
+                ideas.splice(i,1)
+                event.target.closest(".user-idea-box").remove()
+            }
+        }
+    }
+        
+}
+
+//when hit the button change from outline star to filled
+
+function switchStar(event){
+    if(event.target.id === "starButtonInactive" || event.target.id === "starButtonActive"){
+        for(var i = 0; i< ideas.length; i++){
+            if(event.target.closest(".user-idea-box").id === ideas[i].id.toString()){
+                if(event.target.id === "starButtonInactive"){
+                    event.target.id = "starButtonActive"
+                    ideas[i].star = true
+                } else {
+                    event.target.id = "starButtonInactive"
+                    ideas[i].star = false
+                }
+            }
+        }
+    }
+}
+
+
+// update object star key to true
+
