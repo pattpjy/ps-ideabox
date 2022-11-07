@@ -1,72 +1,66 @@
-//querySelector variables
 var newTitle = document.querySelector("#titleInput")
 var newBody = document.querySelector("#bodyInput")
 var saveIdeaButton = document.querySelector("#saveButton")
-var showStarredIdeasButton = document.querySelector("#showStarredIdeasButton")
 var cardBox = document.querySelector(".bottom-section")
 var cardBoxDelete = document.querySelector(".bottom-section")
 
-
-
-//eventListeners
-newTitle.addEventListener("input", function(){
+newTitle.addEventListener("input", function() {
     hideSaveButton()
     showSaveButton()
-    })
+})
     
-newBody.addEventListener("input",function(){
+newBody.addEventListener("input",function() {
     hideSaveButton()
     showSaveButton()
-    }) 
+}) 
 
 saveIdeaButton.addEventListener("click", function(event) {
     event.preventDefault()
     saveIdeas()
     makeUserIdeaCard()
 })
-// *cardBoxSave.addEventListener("click", somefunctionSave) //might need to change name for star button
-cardBoxDelete.addEventListener("click", function(event){
+
+cardBoxDelete.addEventListener("click", function(event) {
     deleteUserCard(event)
     switchStar(event)
 }) 
 
-
-// // showStarredIdeasButton.addEventListener("click", somefunction)
 var ideas = []
-// // userIdeaBox.classList.toggle('hidden') this will un-hidden
 
-function saveIdeas(){
+function saveIdeas() {
     var newIdea = new Idea(newTitle.value, newBody.value)
     ideas.push(newIdea)
     resetForm()
     saveIdeaButton.style.opacity = "0.1"
 }
 
-function resetForm(){
+function resetForm() {
     newTitle.value = ""
     newBody.value = ""
+    saveIdeaButton.disabled = true
 }
 
 function showSaveButton() {
-    if(newTitle.value != "" && newBody.value != ""){
+    if(newTitle.value != "" && newBody.value != "") {
     saveIdeaButton.style.opacity = "1"
     saveIdeaButton.style.cursor = "pointer" 
+    saveIdeaButton.disabled = false
     }
 }
 
 function hideSaveButton() {
-    if(newTitle.value === "" || newBody.value === ""){
+    if(newTitle.value === "" || newBody.value === "") {
     saveIdeaButton.style.opacity = "0.1"
+    saveIdeaButton.style.cursor = "default" 
+    saveIdeaButton.disabled = true
     }
 }
-//this two fuctions above can be combine into one function just make an if /else{}
 
 function makeUserIdeaCard() {
-    console.log('im the make user thing')
     cardBox.innerHTML = "";
-    for (var i = 0; i < ideas.length; i++) {
+    for(var i = 0; i < ideas.length; i++) {
         cardBox.innerHTML += 
-    `<div class="user-idea-box" id="${ideas[i].id}">
+         `<div class="user-idea-box" id="${ideas[i].id}">
                 <div id="miniboxTop">
                     <button class="star-button" id="starButtonInactive"></button>
                     <button class="x-button" id="xButton"></button>
@@ -81,26 +75,22 @@ function makeUserIdeaCard() {
     }
 }
 
-function deleteUserCard(event){
-    if(event.target.id === "xButton"){
-        for(var i = 0; i< ideas.length; i++){
-            //This equal need to be strickly equal, the left side is a string and right side is a integer. when we use double equal, it coerce the two to match. Which we do not want. 
-            if(event.target.closest(".user-idea-box").id === ideas[i].id.toString()){
+function deleteUserCard(event) {
+    if(event.target.id === "xButton") {
+        for(var i = 0; i< ideas.length; i++) {
+            if(event.target.closest(".user-idea-box").id === ideas[i].id.toString()) {
                 ideas.splice(i,1)
                 event.target.closest(".user-idea-box").remove()
             }
         }
-    }
-        
+    }      
 }
 
-//when hit the button change from outline star to filled
-
-function switchStar(event){
-    if(event.target.id === "starButtonInactive" || event.target.id === "starButtonActive"){
-        for(var i = 0; i< ideas.length; i++){
-            if(event.target.closest(".user-idea-box").id === ideas[i].id.toString()){
-                if(event.target.id === "starButtonInactive"){
+function switchStar(event) {
+    if(event.target.id === "starButtonInactive" || event.target.id === "starButtonActive") {
+        for(var i = 0; i< ideas.length; i++) {
+            if(event.target.closest(".user-idea-box").id === ideas[i].id.toString()) {
+                if(event.target.id === "starButtonInactive") {
                     event.target.id = "starButtonActive"
                     ideas[i].star = true
                 } else {
@@ -111,7 +101,3 @@ function switchStar(event){
         }
     }
 }
-
-
-// update object star key to true
-
