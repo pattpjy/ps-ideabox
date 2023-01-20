@@ -1,172 +1,170 @@
 * {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
-    display: flex;
-    margin: 0;
-    min-height: 100vh;
-    padding: 0;
+  display: flex;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
 }
 
 .left-section {
-    background-color: #1F1F3D;
-    border: solid 3px #353567;
-    display: flex;
-    flex: wrap;
-    flex-direction: column;
-    width: 25%; 
+  background-color: #1f1f3d;
+  border: solid 3px #353567;
+  display: flex;
+  flex: wrap;
+  flex-direction: column;
+  width: 25%;
 }
 
 h1 {
-    color: #E9E9F3;
-    font-size: medium;
-    margin-left: 20px;
+  color: #e9e9f3;
+  font-size: medium;
+  margin-left: 20px;
 }
 
 .right-section {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .top-section {
-    align-items: center;
-    background-color: #A9AAD2;
-    display: flex;
-    height: 40%;
-    justify-content: center;
-    width: 100%;
+  align-items: center;
+  background-color: #a9aad2;
+  display: flex;
+  height: 40%;
+  justify-content: center;
+  width: 100%;
 }
 
 form {
-    align-items: stretch;
-    color: #1F1F3D;
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    justify-content: center;
-    width: 40%;
+  align-items: stretch;
+  color: #1f1f3d;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  justify-content: center;
+  width: 40%;
 }
 
 .form-inputs {
-    display: flex;
-    flex-direction: column;
-    margin:10px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
 }
 
 .title-box {
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    padding-bottom: 20px;
- }
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  padding-bottom: 20px;
+}
 
 .title-inputs {
-    border: 2px solid #5356A4;
-    border-radius: 3px;
-    cursor: pointer;
-    height: 35px;
+  border: 2px solid #5356a4;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 35px;
 }
 
 .body-box {
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  padding-bottom: 20px;
 }
 
 .body-inputs {
-    border: 2px solid #5356A4;
-    border-radius: 3px;
-    cursor: pointer;
-    height: 80px;
+  border: 2px solid #5356a4;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 80px;
 }
 
 #saveButton {
-    background-color: #353567;
-    border: 2px solid #5356A4;
-    border-radius: 3px;
-    color: #E9E9F3;
-    cursor: default;
-    font-size: medium;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding: 8px;
-    opacity: 0.1;
+  background-color: #353567;
+  border: 2px solid #5356a4;
+  border-radius: 3px;
+  color: #e9e9f3;
+  cursor: default;
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 8px;
+  opacity: 0.1;
 }
 
 .bottom-section {
-    align-content: flex-start;
-    background-color: #EAEAF4;
-    display: flex;
-    flex-wrap: wrap;
-    height: 60%;
-    gap: 10px;
-    padding: 10px;
-    width: 100%;
+  align-content: flex-start;
+  background-color: #eaeaf4;
+  display: flex;
+  flex-wrap: wrap;
+  height: 60%;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
 }
 
 .user-idea-box {
-    height: 200px;
-    width: 30%;
+  height: 200px;
+  width: 30%;
 }
 
-#miniboxTop {
-    background-color: #1F1F3D;
+#miniBoxTop {
+  background-color: #1f1f3d;
+  display: flex;
+  justify-content: space-between;
 }
 
 #xButton {
-    background-color: Transparent;
-    background-image: url("Assets/delete.svg");
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    height: 20px;
-    width: 20px;
-}   
+  background-color: Transparent;
+  background-image: url("Assets/delete.svg");
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
 
-#starButtonInactive, #starButtonActive {
-    background-color: Transparent;
-    background-image: url("Assets/star.svg");
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    height: 20px;
-    width: 20px;
-} 
+#starButtonInactive,
+#starButtonActive {
+  background-color: Transparent;
+  background-image: url("Assets/star.svg");
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
 
 #starButtonActive {
-    background-image: url("Assets/star-active.svg");
-}   
-
-#miniboxTop {
-    display:flex;
-    justify-content: space-between;
+  background-image: url("Assets/star-active.svg");
 }
 
-#miniboxInner {
-    background-color: #FFFFFF;
-    border: 2px solid #5356A4;;
-    display: flex;
-    flex-direction: column;
-    padding:8px;
+#miniBoxInner {
+  background-color: #ffffff;
+  border: 2px solid #5356a4;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
 }
 
-#miniboxInner>h2 {
-    font-size: small;
-    margin:0%
+#miniBoxInner > h2 {
+  font-size: small;
+  margin: 0%;
 }
 
-#miniboxInner>p {
-    font-size: small;
-    font-weight: light;
-    height: 100px;
-    margin-top: 10px;
-    overflow-wrap: break-word;
+#miniBoxInner > p {
+  font-size: small;
+  font-weight: light;
+  height: 100px;
+  margin-top: 10px;
+  overflow-wrap: break-word;
 }
 
 .hidden {
-    display: none!important;
+  display: none !important;
 }
