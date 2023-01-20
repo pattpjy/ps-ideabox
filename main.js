@@ -1,65 +1,65 @@
-var newTitle = document.querySelector("#titleInput");
-var newBody = document.querySelector("#bodyInput");
-var saveIdeaButton = document.querySelector("#saveButton");
-var cardBox = document.querySelector(".bottom-section");
-var cardBoxDelete = document.querySelector(".bottom-section");
+// var newTitle = document.querySelector("#titleInput");
+// var newBody = document.querySelector("#bodyInput");
+// var saveIdeaButton = document.querySelector("#saveButton");
+// var cardBox = document.querySelector(".bottom-section");
+// var cardBoxDelete = document.querySelector(".bottom-section");
 
-newTitle.addEventListener("input", function () {
-  hideSaveButton();
-  showSaveButton();
-});
+// newTitle.addEventListener("input", function () {
+//   hideSaveButton();
+//   showSaveButton();
+// });
 
-newBody.addEventListener("input", function () {
-  hideSaveButton();
-  showSaveButton();
-});
+// newBody.addEventListener("input", function () {
+//   hideSaveButton();
+//   showSaveButton();
+// });
 
-saveIdeaButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  saveIdeas();
-  makeUserIdeaCard();
-});
+// saveIdeaButton.addEventListener("click", function (event) {
+//   event.preventDefault();
+//   saveIdeas();
+//   makeUserIdeaCard();
+// });
 
-cardBoxDelete.addEventListener("click", function (event) {
-  deleteUserCard(event);
-  switchStar(event);
-});
+// cardBoxDelete.addEventListener("click", function (event) {
+//   deleteUserCard(event);
+//   switchStar(event);
+// });
 
-var ideas = [];
+let ideas = [];
 
 function saveIdeas() {
-  var newIdea = new Idea(newTitle.value, newBody.value);
+  const newIdea = new Idea(pom.newTitle.value, pom.newBody.value);
   ideas.push(newIdea);
   resetForm();
-  saveIdeaButton.style.opacity = "0.1";
+  pom.saveIdeaButton.style.opacity = "0.1";
 }
 
 function resetForm() {
-  newTitle.value = "";
-  newBody.value = "";
-  saveIdeaButton.disabled = true;
+  pom.newTitle.value = "";
+  pom.newBody.value = "";
+  pom.saveIdeaButton.disabled = true;
 }
 
 function showSaveButton() {
-  if (newTitle.value != "" && newBody.value != "") {
-    saveIdeaButton.style.opacity = "1";
-    saveIdeaButton.style.cursor = "pointer";
-    saveIdeaButton.disabled = false;
+  if (pom.newTitle.value != "" && pom.newBody.value != "") {
+    pom.saveIdeaButton.style.opacity = "1";
+    pom.saveIdeaButton.style.cursor = "pointer";
+    pom.saveIdeaButton.disabled = false;
   }
 }
 
 function hideSaveButton() {
-  if (newTitle.value === "" || newBody.value === "") {
-    saveIdeaButton.style.opacity = "0.1";
-    saveIdeaButton.style.cursor = "default";
-    saveIdeaButton.disabled = true;
+  if (pom.newTitle.value === "" || pom.newBody.value === "") {
+    pom.saveIdeaButton.style.opacity = "0.1";
+    pom.saveIdeaButton.style.cursor = "default";
+    pom.saveIdeaButton.disabled = true;
   }
 }
 
 function makeUserIdeaCard() {
-  cardBox.innerHTML = "";
+  pom.cardBox.innerHTML = "";
   for (var i = 0; i < ideas.length; i++) {
-    cardBox.innerHTML += `<div class="user-idea-box" id="${ideas[i].id}">
+    pom.cardBox.innerHTML += `<div class="user-idea-box" id="${ideas[i].id}">
                 <div id="miniboxTop">
                     <button class="star-button" id="starButtonInactive"></button>
                     <button class="x-button" id="xButton"></button>
